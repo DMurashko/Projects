@@ -12,7 +12,6 @@ void	ft_print_combn(int n)
 	char j;
 	char k;
 	char h;
-	char g;
 	char a;
 	
 	i = -1;
@@ -46,23 +45,29 @@ void	ft_print_combn(int n)
 			{
 				if (n < 4)
 				{
+				if (i != j && j != k && -1 < i && i < j && j < k) 
+				{
 				ft_putchar(i + '0');
 				ft_putchar(j + '0');
 				ft_putchar(k + '0');
 				ft_putchar(',');
 				ft_putchar(' ');
 				}
+				}
 				else
 				{
 				h = -1;
 				while (++h < 10)
 				{
+				if (i != j && j != k  && k != h && -1 < i && i < j && j < k && k < h) 
+					{
 					ft_putchar(i + '0');
 					ft_putchar(j + '0');
 					ft_putchar(k + '0');
 					ft_putchar(h + '0');
 					ft_putchar(',');
 					ft_putchar(' ');
+					}
 				}
 				}
 			}
@@ -75,6 +80,6 @@ void	ft_print_combn(int n)
 
 int	main(void)
 {
-	ft_print_combn(2);
+	ft_print_combn(4);
 	return (0);
 }
